@@ -22,6 +22,9 @@ function Clicked(){
   Clicks++;
   if(Clicks>=8){
     var TotalTime = new Date().getTime()-Time;
+    var persec = TotalTime/(Clicks-1);
+    var permin = TotalTime/(Clicks-1);
+    console.log(persec+" "+permin);
     window.alert("Time for "+Clicks+" clicks: "+TotalTime+"ms\nClicks per Second: "+(1000/TotalTime/(Clicks-1))+"\nClicks per Minute: "+(1000*60/TotalTime/(Clicks-1)));
     Clicks = 0;
     Time = 0;
