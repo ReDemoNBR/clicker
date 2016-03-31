@@ -25,7 +25,7 @@ function Clicked(){
     var persec = TotalTime/(Clicks-1);
     var permin = TotalTime/(Clicks-1);
     console.log(persec+" "+permin);
-    window.alert("Time for "+Clicks+" clicks: "+TotalTime+"ms\nClicks per Second: "+(1000/TotalTime/(Clicks-1))+"\nClicks per Minute: "+(1000*60/TotalTime/(Clicks-1)));
+    window.alert("Time for "+Clicks+" clicks: "+TotalTime+"ms\nClicks per Second: "+(1000*(Clicks-1)/TotalTime)+"\nClicks per Minute: "+(1000*60*(Clicks-1)/TotalTime));
     Clicks = 0;
     Time = 0;
   }
