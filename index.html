@@ -1,4 +1,15 @@
-<div style="width:50%; height:30%; top:0px; right:0px; bottom:0px; left:0px; margin:auto auto auto auto; background-color:#000000; color:#FFFFFF; vertical-align:middle; text-align:center;" onclick="Clicked()">Click Me</div>
+<style>
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+</style><div style="width:50%; height:30%; top:0px; right:0px; bottom:0px; left:0px; margin:auto auto auto auto; background-color:#000000; color:#FFFFFF; vertical-align:middle; text-align:center;" onclick="Clicked()">
+    <div>Click Me</div>
+</div>
 <script>
 var Clicks = 0;
 var Time = 0;
@@ -9,7 +20,7 @@ function Clicked(){
   Clicks++;
   if(Clicks>=8){
     var TotalTime = new Date().getTime()-Time;
-    window.alert("Time for "+Clicks+" clicks: "+TotalTime+"ms\nClicks per Second: "+(TotalTime*1000/(Clicks-1))+"\nClicks per Minute: "+(TotalTime*1000*60/(Clicks-1)));
+    window.alert("Time for "+Clicks+" clicks: "+TotalTime+"ms\nClicks per Second: "+(1000/TotalTime/(Clicks-1))+"\nClicks per Minute: "+(1000*60/TotalTime/(Clicks-1)));
     Clicks = 0;
     Time = 0;
   }
