@@ -1,0 +1,17 @@
+<div style="width:50%; height:30%; top:0px; right:0px; bottom:0px; left:0px; margin:auto auto auto auto; background-color:#000000; color:#FFFFFF; vertical-align:middle; text-align:center;" onclick="Clicked()">Click Me</div>
+<script>
+var Clicks = 0;
+var Time = 0;
+function Clicked(){
+  if(Time==0){
+    Time = new Date().getTime();
+  }
+  Clicks++;
+  if(Clicks>=8){
+    var TotalTime = new Date().getTime()-Time;
+    window.alert("Time for "+Clicks+" clicks: "+TotalTime+"ms\nClicks per Second: "+(TotalTime*1000/(Clicks-1))+"\nClicks per Minute: "+(TotalTime*1000*60/(Clicks-1)));
+    Clicks = 0;
+    Time = 0;
+  }
+}
+</script>
