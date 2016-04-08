@@ -15,14 +15,20 @@
 <script>
 var Clicks = 0;
 var Time = 0;
+var InitTime = "";
 function Clicked(){
   if(Time==0){
-    Time = new Date().getTime();
+    var DateObj = new Date();
+    Time = DateObj.getTime();
+    InitTime = DateObj.getUTCHours()+":"+DateObj.getUTCMinutes()+":"+DateObj.getUTCSeconds()+"."+DateObj.getUTCMilliseconds();
   }
   Clicks++;
   if(Clicks>=8){
-    var TotalTime = new Date().getTime()-Time;
-    window.alert("Time for "+Clicks+" clicks: "+TotalTime+"ms\nClicks per Second: "+(1000*(Clicks-1)/TotalTime)+"\nClicks per Minute: "+(1000*60*(Clicks-1)/TotalTime));
+    var DateObj = new Date();
+    var EndTime = DateObj.getUTCHours()+":"+DateObj.getUTCMinutes()+":"+DateObj.getUTCSeconds()+"."+DateObj.getUTCMilliseconds();
+    //console.log(EndTime);
+    var TotalTime = DateObj.getTime()-Time;
+    window.alert("Time for "+Clicks+" clicks: "+TotalTime+"ms\nClicks per Second: "+(1000*(Clicks-1)/TotalTime)+"\nClicks per Minute: "+(1000*60*(Clicks-1)/TotalTime)+"\n\nFirst click: "+InitTime+" (UTC)\nLast click: "+EndTime+" (UTC)");
     Clicks = 0;
     Time = 0;
   }
